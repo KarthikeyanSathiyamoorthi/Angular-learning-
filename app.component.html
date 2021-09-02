@@ -1,0 +1,7 @@
+<h1>{{name}}</h1>
+<h2>Employee Lists</h2>
+<ul *ngFor = "let employee of employees">
+    <li>{{employee.name}}</li>
+</ul>
+<app-test (childEvent)="item=$event" [parentData] = "name" ></app-test>
+
