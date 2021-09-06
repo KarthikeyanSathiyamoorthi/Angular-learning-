@@ -1,0 +1,11 @@
+div{
+    text-align: center;
+    padding: 10px 10px;
+}
+label{
+    text-align: left;
+}
+.alert{
+    color:red;
+    text-align: center;
+}

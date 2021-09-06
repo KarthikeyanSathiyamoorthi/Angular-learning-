@@ -1,0 +1,39 @@
+.registrationRow{
+    justify-content: center;
+    display: flex;
+}
+.registrationCol{
+    padding: 0px;
+}
+.cardBody{
+    text-align: center;
+    
+}
+.cardText{
+    color: #023047;
+    color: #219EBC;
+    font-size: 24px;
+    font-family: "Open Sans";
+}
+.registrationForm{
+    padding: 0px 15px;
+}
+.registrationLabel{
+    color: #023047;
+  font-family: "Open Sans";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.registrationInput{
+        box-sizing: border-box;
+        border: 1px solid #CED4DA;
+        border-radius: 4px;
+        background-color: #ffffff;
+        font-family: 'Roboto';    
+}
+.buttonContainer{
+    padding: 5px 0px;
+    text-align: center;
+}
