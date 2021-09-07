@@ -1,0 +1,100 @@
+<div>
+    <div class="container">
+    <h1>User Registration</h1>
+    <form #userForm = "ngForm" (ngSubmit)="submit()" novalidate>
+        {{ userForm.value | json }}
+
+        {{ userForm.form.valid }}
+        <div class="form-group">
+            <label for = "firstName">First Name</label>
+            <input type="text" 
+            required 
+            #name = "ngModel"
+            name="firstName" 
+            ngModel 
+            [class.is-invalid]="name.invalid && name.touched"
+            class="form-control">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required!</small>
+        </div>
+
+        {{ name.valid }}
+        <pre></pre>
+
+        <div class="form-group">
+            <select (blur)="validateTopic(topic.value)" (change)="validateTopic(topic.value)" required #topic="ngModel" [class.is-invalid]="topicHasError && topic.touched" class="custom-select" name= "topic" ngModel>
+                <option value="default">I am interested in</option>
+                <option value="angular">Angular</option>
+                <option value="react">React</option>
+                <option value="vue">Vue</option>
+            </select> 
+            <small class="text-danger" [class.d-none]="!topicHasError || topic.untouched">Please select a topic</small>
+
+        </div>
+        <div class="form-group">
+            <label for = "lastName">Last Name</label><br>
+            <input type="text" name="lastName" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <div class="form-group">
+            <label for = "email">Email</label><br>
+            <input type="text" name="email" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <div ngModelGroup = "address">
+        <div class="form-group">
+            <label for = "street">Street</label>
+            <input type="text" name="street" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <div class="form-group">
+            <label for = "city">City</label><br>
+            <input type="text" name="city" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <div class="form-group">
+            <label for = "state">State</label><br>
+            <input type="text" name="state" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <div class="form-group">
+            <label for = "postalcode">Postal Code</label><br>
+            <input type="text" name="postalcode" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        </div>
+
+        <div class="form-group">
+            <label for = "phone">Phone Number</label><br>
+            <input type="tel" 
+            #phone="ngModel"
+            [class.is-invalid]="phone.invalid && phone.touched"
+            pattern="^\d{10}$" 
+            name="phone" 
+            required
+            ngModel class="form-control">
+            <!-- <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone Number is required & must be 10 digits!</small> -->
+            <div *ngIf = "phone.errors && (phone.valid || phone.touched)">
+                <small class="text-danger" *ngIf= "phone.errors.required">Phone number is required!</small>
+                <small class="text-danger" *ngIf= "phone.errors.pattern">Phone number must be 10 digits!</small>
+
+            </div>
+        </div>
+        <pre></pre>
+
+
+        <div class="form-group">
+            <label for = "password">Password</label><br>
+            <input type="text" name="password" ngModel class="form-control">
+        </div>
+        <pre></pre>
+
+        <button [disabled]="userForm.form.invalid || topicHasError" class="=btn btn-primary" type="submit" >Submit</button>
+    </form>
+</div>
+</div>

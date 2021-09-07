@@ -1,0 +1,17 @@
+<p style="padding-bottom:20px;">You selected department with id = {{departmentId}}</p>
+
+<p style="padding:20px;">
+    <button class = "btn btn-success" (click)= "showOverview()">Overview</button>
+    <button class = "btn btn-success" (click)= "showContact()">Contact</button>
+
+</p>
+<router-outlet></router-outlet>
+
+<p style="padding:20px;" >
+<button class = "btn btn-primary" (click)="goPrevious()" >Previous</button>
+<button class = "btn btn-primary" (click)="goNext()">Next</button>
+</p>
+
+<div style="padding:0px 20px;">
+<button class="btn btn-success" style="margin-left: 10px;" (click) = goToDepartments() >Back</button>
+</div>
